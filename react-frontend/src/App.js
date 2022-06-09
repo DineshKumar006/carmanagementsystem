@@ -19,6 +19,7 @@ function App() {
   let location=useLocation();
 
  const clickHandler=()=>{
+   console.log('clicked')
     setShowLogin(true)
   }
   return (
