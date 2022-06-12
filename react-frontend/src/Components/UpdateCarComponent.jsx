@@ -19,7 +19,7 @@ class UpdateCarComponent extends Component {
    
 
     componentDidMount(){
-      CarService.getCardetailById().then((data) => {
+      CarService.getCardetailById( (this.props.location.state&&this.props.location.state.id)?this.props.location.state.id:1).then((data) => {
         this.setState({ cardetail: data })
         console.log(this.state.data)
       })
