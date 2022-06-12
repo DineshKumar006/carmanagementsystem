@@ -11,8 +11,18 @@ class CarService {
         return axios.post(CAR_API_BASE_URL, cardetail);
     }
 
-    getCardetailById(cardetailId){
-        return axios.get(CAR_API_BASE_URL + '/' + cardetailId);
+    getCardetailById =async( cardetailId) =>{
+        try{
+            let res=await axios.get(CAR_API_BASE_URL + '/' + cardetailId);
+            console.log(res)
+
+            return res
+
+        }catch(error){
+            console.log(error)
+            return error
+        }
+        
     }
     updateCardetail=async(cardetail, cardetailId)=>{
         try {
@@ -30,17 +40,17 @@ class CarService {
     deleteCardetail(cardetailId){
         return axios.delete(CAR_API_BASE_URL + '/' + cardetailId);
     }
-    getCardetails(){
-        return fetch(CAR_API_BASE_URL,{ 
-            method: 'get',
-                headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json',
-                },
-                'credentials': 'same-origin'
-        })
-        .then(res => res.json());        
-    }
+    // getCardetails(){
+    //     return fetch(CAR_API_BASE_URL,{ 
+    //         method: 'get',
+    //             headers: {
+    //             'Accept': 'application/json, text/plain, */*',
+    //             'Content-Type': 'application/json',
+    //             },
+    //             'credentials': 'same-origin'
+    //     })
+    //     .then(res => res.json());        
+    // }
 
 
 
