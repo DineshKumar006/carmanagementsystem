@@ -19,9 +19,24 @@ class UpdateCarComponent extends Component {
    
 
     componentDidMount(){
-      CarService.getCardetailById( (this.props.location.state&&this.props.location.state.id)?this.props.location.state.id:1).then((data) => {
-        this.setState({ cardetail: data })
-        console.log(this.state.data)
+      CarService.getCardetailById( (this.props.location.state&&this.props.location.state.id)?this.props.location.state.id:1).then((res) => {
+       // this.setState({ cardetail: data })
+       console.log(res.data)
+            let cardetail = res.data;
+            this.setState({
+                make: cardetail.make,
+                model: cardetail.model,
+                variant: cardetail.variant,
+                date_of_registration: cardetail.date_of_registration,
+                vin_number: cardetail.vin_number,
+                reg_number: cardetail.reg_number,
+                color: cardetail.color,
+                cc: cardetail.cc,
+                fuel: cardetail.fuel
+
+                
+            });
+       
       })
       .catch(function (ex) {
           console.log('Response parsing failed. Error: ', ex);
@@ -98,7 +113,7 @@ class UpdateCarComponent extends Component {
         return (
             <div>
                 <br></br>
-                   <div style={{position:"absolute" , top:"10px" , left:"0px" , right:"0px" , overflow:"hidden",zIndex:-1,marginTop:50,minHeight:300}}>
+                   <div style={{position:"absolute" , top:"10px" , left:"0px" , right:"0px" , overflow:"hidden",zIndex:-1,marginTop:50,minHeight:'100vh'}}>
 
                         <div className = "row">
                             <div className = "card col-md-6 offset-md-3 offset-md-3">

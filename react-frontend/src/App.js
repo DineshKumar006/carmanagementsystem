@@ -11,7 +11,7 @@ import UpdateCarComponent from "./Components/UpdateCarComponent";
 import {Route,Routes} from 'react-router-dom'
 import LoginComponent from './Components/LoginComponent';
 import ListCarComponent from './Components/ListCarComponent';
-import ViewCarComponent from './Components/ViewCarComponent';
+//import ViewCarComponent from './Components/ViewCarComponent';
 import {useNavigate,useLocation} from 'react-router-dom'
 function App() {
   let [showLogin,setShowLogin]=useState(false)
@@ -63,10 +63,10 @@ const logoutHandler=()=>{
                           isWrongCredentials={isWrongCredentials}
                           isLoggedIn={isLoggedIn}
                           
-                          />:<div></div>}/>
+                          />:<div style={{marginTop:100}}>car makkhsjdcksllcjsbdc hkcjhsjcmkshbc </div>}/>
                           <Route path = "/cardetails"  element = {<ListCarComponent navigate={navigate} location={location}/>}/>
                          
-                          <Route path = "/view-cardetail/:id" exact element = {<ViewCarComponent navigate={navigate} location={location}/>}/>
+                          {/* <Route path = "/view-cardetail/:id" exact element = {<ViewCarComponent navigate={navigate} location={location}/>}/> */}
                            <Route path = "/update-cardetail/:id" exact element = {<UpdateCarComponent navigate={navigate} location={location}  />}/>
                           
                    </Routes>
