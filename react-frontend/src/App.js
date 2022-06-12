@@ -63,7 +63,10 @@ const logoutHandler=()=>{
                           isWrongCredentials={isWrongCredentials}
                           isLoggedIn={isLoggedIn}
                           
-                          />:<div style={{marginTop:100}}>car makkhsjdcksllcjsbdc hkcjhsjcmkshbc </div>}/>
+                          />:<div style={{marginTop:100}}>A car dealership, or car dealer, is a business that sells new or used cars at the retail level, based on a 
+                          dealership contract with an automaker or its sales subsidiary. 
+                          It can also carry a variety of Certified Pre-Owned vehicles. 
+                          It employs automobile salespeople to sell their automotive vehicles. It may also provide maintenance services for cars, and employ automotive technicians to stock and sell spare automobile parts and process warranty claims.</div>}/>
                           <Route path = "/cardetails"  element = {<ListCarComponent navigate={navigate} location={location}/>}/>
                          
                           {/* <Route path = "/view-cardetail/:id" exact element = {<ViewCarComponent navigate={navigate} location={location}/>}/> */}

@@ -15,7 +15,7 @@ class HeaderComponent extends Component {
                 <header>
                     <nav >
                         <div style={{ display: 'flex' }}>
-                            <a href="" className="navbar-brand">Car Management App </a>
+                            <a href="" className="navbar-brand">Vechile Management System </a>
                             {this.props.isLoggedIn ?
                                 <span className="navbar-brand" style={{ position: 'fixed', right: 10, top: 10, cursor: 'pointer' }} onClick={this.props.logoutHandler}>Logout</span>
                                 :
