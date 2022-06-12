@@ -24,13 +24,13 @@ class ListCarComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{position:"absolute" , top:"10px" , left:"0px" , right:"0px" , overflow:"hidden",zIndex:-1,marginTop:50,minHeight:300}}>
                  <h2 className="text-center">CAR DETAILS</h2>
                  <div className = "row">
                     <button className="btn btn-primary" onClick={this.addCardetails}> View Details</button>
                  </div>
                  <br></br>
-                 <div className = "row">
+                 <div className = "row" style={{overflowX:'auto',margin:'0px 8px'}}>
                         <table className = "table table-striped table-bordered">
 
                             <thead>

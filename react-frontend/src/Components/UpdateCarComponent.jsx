@@ -98,7 +98,8 @@ class UpdateCarComponent extends Component {
         return (
             <div>
                 <br></br>
-                   <div className = "container" >
+                   <div style={{position:"absolute" , top:"10px" , left:"0px" , right:"0px" , overflow:"hidden",zIndex:-1,marginTop:50,minHeight:300}}>
+
                         <div className = "row">
                             <div className = "card col-md-6 offset-md-3 offset-md-3">
                                 <h3 className="text-center">Update details</h3>

@@ -10,11 +10,11 @@ class LoginComponent extends Component {
             username: '',
             password: '',
             hasLoginFailed: false,
-            showSuccessMessage: false
+            showSuccessMessage: false,
+            isLoggedIn: false
         }
 
         this.handleChange = this.handleChange.bind(this)
-        this.loginClicked = this.loginClicked.bind(this)
     }
 
     handleChange(event) {
@@ -26,41 +26,40 @@ class LoginComponent extends Component {
         )
     }
 
-    loginClicked() {
-      
-        if(this.state.username==='Mukesh' && this.state.password==='kumar'){
-            
-            this.props.navigate("/cardetails")
-            this.setState({showSuccessMessage:true})
-            this.setState({hasLoginFailed:false})
-        }
-        else {
-            this.setState({showSuccessMessage:false})
-            this.setState({hasLoginFailed:true})
-        }
 
-    
-
-    }
 
     render() {
         return (
-            <div className = " text-center"style={{bottom:'1rpm'}}>
-                <h1 className="text-center">Login</h1>
+            <div className=" text-center" style={{ marginTop:100}}>
+              
                 <div className="container">
-                   
-                    {this.state.hasLoginFailed && <div className="alert alert-warning">Invalid Credentials</div>}
-                    {this.state.showSuccessMessage && <div>Login Sucessful</div>}
-                    
-                   <p/>
-                   User Name: <input type="text" placeholder='Enter UserName' name="username"  value={this.state.username} onChange={this.handleChange} />
-                   <p/>
-                   Password: <input type="password" placeholder='Enter Password' name="password" 
-                    value={this.state.password} onChange={this.handleChange} />
-                    <p/>
-                    <button className="btn btn-success" onClick={this.loginClicked}>Login</button>
 
+                    {this.props.isWrongCredentials && <div className="alert alert-warning">Invalid Credentials</div>}
                     
+                    <div style={{height:200,display:'flex',justifyContent:'space-evenly',alignItems:'center',flexDirection:'column'}}>
+                        <div style={{display:'flex',justifyContent:'center',alignItems:'flex-start',width:'50%',flexWrap:'wrap',flexDirection:'column'}}>
+                        <label style={{marginBottom:8,marginTop:10}}>  User Name:  </label>
+                        <input type="text" placeholder='Enter UserName' name="username" value={this.state.username} onChange={this.handleChange} style={{height:40,width:'80%'}} />
+
+                        </div>
+                      
+                        <div style={{display:'flex',justifyContent:'center',alignItems:'flex-start',width:'50%',flexWrap:'wrap',flexDirection:'column'}}>
+                        <label style={{marginBottom:8,marginTop:10}}> Password:</label>
+                        <input type="password" placeholder='Enter Password' name="password" value={this.state.password} onChange={this.handleChange} style={{height:40,width:'80%'}} />
+                        </div>
+
+                        <div style={{display:'flex',justifyContent:'center',alignItems:'flex-start',width:'50%',flexWrap:'wrap',flexDirection:'column'}}>
+
+                        <button className="btn btn-success" onClick={()=>this.props.loginClicked(this.state.username,this.state.password)} style={{marginTop:10,width:'80%'}}>Login</button>
+                        </div>
+                    </div>
+
+                    {/* <p />
+                    User Name: 
+                    <p />
+                    Password: <input type="password" placeholder='Enter Password' name="password"
+                        value={this.state.password} onChange={this.handleChange} />
+                    <p /> */}
                 </div>
             </div>
         )

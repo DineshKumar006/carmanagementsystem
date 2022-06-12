@@ -24,7 +24,8 @@ class ViewCarComponent extends Component {
         return (
             <div>
                 <br></br>
-                <div className = "card col-md-6 offset-md-3">
+                <div className = "card col-md-6 offset-md-3" style={{position:"absolute" , top:"10px" , left:"0px" , right:"0px" , overflow:"hidden",zIndex:-1,marginTop:50,minHeight:300}}>
+
                     <h3 className = "text-center"> View Car Details</h3>
                     <div className = "card-body">
                         <div className = "row">
