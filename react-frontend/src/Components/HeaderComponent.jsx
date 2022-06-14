@@ -17,7 +17,16 @@ class HeaderComponent extends Component {
                         <div style={{ display: 'flex' }}>
                             <a href="" className="navbar-brand">Vechile Management System </a>
                             {this.props.isLoggedIn ?
-                                <span className="navbar-brand" style={{ position: 'fixed', right: 10, top: 10, cursor: 'pointer' }} onClick={this.props.logoutHandler}>Logout</span>
+                            <React.Fragment>
+                                <div style={{position: 'fixed',right: 10, top: 10, }}>
+                                {/* <span className="navbar-brand" style={{ cursor: 'pointer' }} onClick={this.props.logoutHandler}>View Details</span>
+                                <span className="navbar-brand" style={{ cursor: 'pointer' }} onClick={this.props.logoutHandler}>Update</span>
+                                <span className="navbar-brand" style={{ cursor: 'pointer' }} onClick={this.props.logoutHandler}>Delete</span> */}
+                                <span className="navbar-brand" style={{ cursor: 'pointer' }} onClick={this.props.logoutHandler}>Logout</span>
+                                </div>
+                                
+
+                            </React.Fragment>
                                 :
                                 <span className="navbar-brand" style={{ position: 'fixed', right: 10, top: 10, cursor: 'pointer' }} onClick={this.props.showLogin}>Login</span>
 
