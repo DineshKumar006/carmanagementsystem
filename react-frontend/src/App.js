@@ -15,6 +15,7 @@ function App() {
   let [showLogin, setShowLogin] = useState(false)
   let [isWrongCredentials, setisWrongCredentials] = useState(false)
   let [isLoggedIn, setisLoggedIn] = useState(false)
+  let [showList,setShowList] =  useState(false)
   let navigate = useNavigate()
   let location = useLocation();
 
@@ -57,12 +58,19 @@ function App() {
     )
   }
 
+
+  const showListHandler=()=>{
+    setShowList(true)
+  }
+
+
   return (
     <React.Fragment>
       <HeaderComponent
         showLogin={clickHandler}
         isLoggedIn={isLoggedIn}
         logoutHandler={logoutHandler}
+        showListHandler={showListHandler}
 
       //  isLoggedIn={}
       />
@@ -83,7 +91,7 @@ function App() {
           }
 
           />
-          <Route path="/cardetails" element={<ListCarComponent navigate={navigate} location={location} />} />
+          <Route path="/cardetails" element={<ListCarComponent navigate={navigate} location={location} showList={showList} />} />
 
           {/* <Route path = "/view-cardetail/:id" exact element = {<ViewCarComponent navigate={navigate} location={location}/>}/> */}
           <Route path="/update-cardetail/:id" exact element={<UpdateCarComponent navigate={navigate} location={location} />} />
