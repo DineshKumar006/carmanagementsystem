@@ -71,6 +71,7 @@ function App() {
         isLoggedIn={isLoggedIn}
         logoutHandler={logoutHandler}
         showListHandler={showListHandler}
+        showList={showList}
 
       //  isLoggedIn={}
       />
